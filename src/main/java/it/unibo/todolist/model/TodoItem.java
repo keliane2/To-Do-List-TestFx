@@ -1,4 +1,4 @@
-package it.unibo.todolist;
+package it.unibo.todolist.model;
 
 public class TodoItem {
 

@@ -1,4 +1,4 @@
-package it.unibo.todolist;
+package it.unibo.todolist.model;
 
 import java.io.*;
 import java.nio.file.*;
