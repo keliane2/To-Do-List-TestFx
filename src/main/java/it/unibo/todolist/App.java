@@ -3,6 +3,7 @@ package it.unibo.todolist;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 
@@ -12,28 +13,52 @@ public class App extends Application {
     public void start(Stage stage) {
         TodoController controller = new TodoController();
 
+        Label title = new Label("Todo List");
+        title.setId("titleLabel");
+
+        Label subtitle = new Label("Organizza le tue attività quotidiane");
+        subtitle.setId("subtitleLabel");
+
         HBox inputBox = new HBox(10);
+        inputBox.setId("inputBox");
         inputBox.getChildren().addAll(
                 controller.getInputField(),
                 controller.getAddButton()
         );
 
-        HBox buttonBox = new HBox(10);
-        buttonBox.getChildren().addAll(
-                controller.getCompleteButton(),
+        HBox actionBox = new HBox(10);
+        actionBox.getChildren().addAll(
+                controller.getToggleButton(),
                 controller.getDeleteButton()
         );
 
-        VBox root = new VBox(10);
-        root.setPadding(new Insets(20));
-        root.getChildren().addAll(
+        HBox filterBox = new HBox(10);
+        filterBox.getChildren().addAll(
+                controller.getAllFilterButton(),
+                controller.getTodoFilterButton(),
+                controller.getCompletedFilterButton()
+        );
+
+        VBox card = new VBox(15);
+        card.setId("mainCard");
+        card.getChildren().addAll(
+                title,
+                subtitle,
                 inputBox,
                 controller.getListView(),
-                buttonBox,
+                actionBox,
+                filterBox,
                 controller.getMessageLabel()
         );
 
-        Scene scene = new Scene(root, 500, 400);
+        StackPane root = new StackPane(card);
+        root.setPadding(new Insets(30));
+        root.setId("rootPane");
+
+        Scene scene = new Scene(root, 650, 550);
+        scene.getStylesheets().add(
+                getClass().getResource("/style.css").toExternalForm()
+        );
 
         stage.setTitle("Todo List - JavaFX");
         stage.setScene(scene);

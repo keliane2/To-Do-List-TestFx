@@ -1,1 +1,5 @@
+it\unibo\todolist\TodoController$Filter.class
+it\unibo\todolist\TodoController.class
+it\unibo\todolist\TodoStorage.class
 it\unibo\todolist\App.class
+it\unibo\todolist\TodoItem.class

@@ -2,12 +2,16 @@ package it.unibo.todolist;
 
 public class TodoItem {
 
-    private String text;
+    private final String text;
     private boolean completed;
 
     public TodoItem(String text) {
+        this(text, false);
+    }
+
+    public TodoItem(String text, boolean completed) {
         this.text = text;
-        this.completed = false;
+        this.completed = completed;
     }
 
     public String getText() {
@@ -18,8 +22,8 @@ public class TodoItem {
         return completed;
     }
 
-    public void setCompleted(boolean completed) {
-        this.completed = completed;
+    public void toggleCompleted() {
+        completed = !completed;
     }
 
     @Override
