@@ -28,7 +28,6 @@ public class App extends Application {
 
         HBox actionBox = new HBox(10);
         actionBox.getChildren().addAll(
-                controller.getToggleButton(),
                 controller.getDeleteButton()
         );
 
@@ -45,6 +44,7 @@ public class App extends Application {
                 title,
                 subtitle,
                 inputBox,
+                controller.getStatsLabel(),
                 controller.getListView(),
                 actionBox,
                 filterBox,

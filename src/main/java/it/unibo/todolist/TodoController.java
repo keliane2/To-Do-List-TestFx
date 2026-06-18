@@ -2,6 +2,7 @@ package it.unibo.todolist;
 
 import javafx.collections.*;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 
 public class TodoController {
 
@@ -19,19 +20,21 @@ public class TodoController {
     private final TextField inputField = new TextField();
     private final Button addButton = new Button("Aggiungi");
     private final Button deleteButton = new Button("Elimina");
-    private final Button toggleButton = new Button("Completa / Riapri");
 
     private final Button allFilterButton = new Button("Tutte");
     private final Button todoFilterButton = new Button("Da fare");
     private final Button completedFilterButton = new Button("Completate");
 
     private final Label messageLabel = new Label();
+    private final Label statsLabel = new Label();
+
     private final ListView<TodoItem> listView = new ListView<>(visibleItems);
 
     public TodoController() {
         allItems.addAll(storage.load());
-        updateVisibleItems();
         configureComponents();
+        updateVisibleItems();
+        updateStats();
     }
 
     private void configureComponents() {
@@ -40,22 +43,60 @@ public class TodoController {
 
         addButton.setId("addButton");
         deleteButton.setId("deleteButton");
-        toggleButton.setId("toggleButton");
 
         allFilterButton.setId("allFilterButton");
         todoFilterButton.setId("todoFilterButton");
         completedFilterButton.setId("completedFilterButton");
 
         messageLabel.setId("messageLabel");
+        statsLabel.setId("statsLabel");
         listView.setId("todoList");
 
         addButton.setOnAction(e -> addItem());
         deleteButton.setOnAction(e -> deleteSelectedItem());
-        toggleButton.setOnAction(e -> toggleSelectedItem());
 
         allFilterButton.setOnAction(e -> setFilter(Filter.ALL));
         todoFilterButton.setOnAction(e -> setFilter(Filter.TODO));
         completedFilterButton.setOnAction(e -> setFilter(Filter.COMPLETED));
+
+        listView.setCellFactory(param -> new ListCell<>() {
+            private final CheckBox checkBox = new CheckBox();
+            private final HBox container = new HBox(10, checkBox);
+
+            {
+                checkBox.setOnAction(e -> {
+                    TodoItem item = getItem();
+
+                    if (item != null) {
+                        item.toggleCompleted();
+                        saveAndRefresh();
+                        messageLabel.setText("Stato attività aggiornato.");
+                    }
+                });
+            }
+
+            @Override
+            protected void updateItem(TodoItem item, boolean empty) {
+                super.updateItem(item, empty);
+
+                if (empty || item == null) {
+                    setGraphic(null);
+                    setText(null);
+                } else {
+                    checkBox.setText(item.getText());
+                    checkBox.setSelected(item.isCompleted());
+
+                    if (item.isCompleted()) {
+                        checkBox.setStyle("-fx-text-fill: #78909c; -fx-strikethrough: true;");
+                    } else {
+                        checkBox.setStyle("-fx-text-fill: #263238;");
+                    }
+
+                    setGraphic(container);
+                    setText(null);
+                }
+            }
+        });
     }
 
     public TextField getInputField() {
@@ -68,10 +109,6 @@ public class TodoController {
 
     public Button getDeleteButton() {
         return deleteButton;
-    }
-
-    public Button getToggleButton() {
-        return toggleButton;
     }
 
     public Button getAllFilterButton() {
@@ -88,6 +125,10 @@ public class TodoController {
 
     public Label getMessageLabel() {
         return messageLabel;
+    }
+
+    public Label getStatsLabel() {
+        return statsLabel;
     }
 
     public ListView<TodoItem> getListView() {
@@ -117,24 +158,20 @@ public class TodoController {
             return;
         }
 
-        allItems.remove(selected);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Conferma eliminazione");
+        alert.setHeaderText("Eliminare questa attività?");
+        alert.setContentText(selected.getText());
 
-        saveAndRefresh();
-        messageLabel.setText("Attività eliminata.");
-    }
-
-    private void toggleSelectedItem() {
-        TodoItem selected = listView.getSelectionModel().getSelectedItem();
-
-        if (selected == null) {
-            messageLabel.setText("Errore: selezionare una attività.");
-            return;
-        }
-
-        selected.toggleCompleted();
-
-        saveAndRefresh();
-        messageLabel.setText("Stato attività aggiornato.");
+        alert.showAndWait().ifPresent(response -> {
+            if (response == ButtonType.OK) {
+                allItems.remove(selected);
+                saveAndRefresh();
+                messageLabel.setText("Attività eliminata.");
+            } else {
+                messageLabel.setText("Eliminazione annullata.");
+            }
+        });
     }
 
     private void setFilter(Filter filter) {
@@ -151,6 +188,7 @@ public class TodoController {
     private void saveAndRefresh() {
         storage.save(allItems);
         updateVisibleItems();
+        updateStats();
         listView.refresh();
     }
 
@@ -166,5 +204,20 @@ public class TodoController {
                 visibleItems.add(item);
             }
         }
+    }
+
+    private void updateStats() {
+        long completed = allItems.stream()
+                .filter(TodoItem::isCompleted)
+                .count();
+
+        long total = allItems.size();
+        long todo = total - completed;
+
+        statsLabel.setText(
+                "Totale: " + total +
+                " | Da fare: " + todo +
+                " | Completate: " + completed
+        );
     }
 }
