@@ -44,4 +44,8 @@ public class TodoStorage {
             System.err.println("Errore nel salvataggio: " + e.getMessage());
         }
     }
+
+    public void clear() {
+        save(List.of());
+    }
 }
