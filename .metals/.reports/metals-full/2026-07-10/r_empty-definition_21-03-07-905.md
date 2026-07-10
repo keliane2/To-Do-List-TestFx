@@ -1,3 +1,22 @@
+error id: file:///D:/UNIBO/LM_1/S2/Paradigmi/Progetto/Automatic_GUI_Testing/src/test/scala/it/unibo/todolist/TodoListGUITest.scala:clickOn.
+file:///D:/UNIBO/LM_1/S2/Paradigmi/Progetto/Automatic_GUI_Testing/src/test/scala/it/unibo/todolist/TodoListGUITest.scala
+empty definition using pc, found symbol in pc: 
+empty definition using semanticdb
+empty definition using fallback
+non-local guesses:
+	 -org/junit/jupiter/api/Assertions.clickOn.
+	 -org/junit/jupiter/api/Assertions.clickOn#
+	 -org/junit/jupiter/api/Assertions.clickOn().
+	 -clickOn.
+	 -clickOn#
+	 -clickOn().
+	 -scala/Predef.clickOn.
+	 -scala/Predef.clickOn#
+	 -scala/Predef.clickOn().
+offset: 3890
+uri: file:///D:/UNIBO/LM_1/S2/Paradigmi/Progetto/Automatic_GUI_Testing/src/test/scala/it/unibo/todolist/TodoListGUITest.scala
+text:
+```scala
 package it.unibo.todolist
 
 import it.unibo.todolist.controller.TodoController
@@ -6,7 +25,6 @@ import it.unibo.todolist.view.TodoView
 
 import javafx.scene.Scene
 import javafx.scene.control.{Label, ListView}
-import javafx.scene.input.KeyCode
 import javafx.stage.Stage
 
 import org.junit.jupiter.api.Test
@@ -151,10 +169,16 @@ class TodoListGUITest extends ApplicationTest {
     })
 
     clickOn("#deleteButton")
-    press(KeyCode.ESCAPE)
-    release(KeyCode.ESCAPE)
+    @@press(KeyCode.ESCAPE)
+release(KeyCode.ESCAPE)
 
     assertEquals(1, listView.getItems.size)
     assertEquals("Task da eliminare", listView.getItems.get(0).text)
   }
 }
+```
+
+
+#### Short summary: 
+
+empty definition using pc, found symbol in pc: 
