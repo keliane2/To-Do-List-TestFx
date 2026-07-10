@@ -1,0 +1,23 @@
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = D:\UNIBO\LM_1\S2\Paradigmi\Progetto\Automatic_GUI_Testing\target\out\jvm\scala-3.3.7\todo-list-testfx\test-classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$1.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$1.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$2.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$1.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest$$anon$2.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0m	TodoListGUITest.tasty[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: D:\UNIBO\LM_1\S2\Paradigmi\Progetto\Automatic_GUI_Testing\target\out\jvm\scala-3.3.7\todo-list-testfx\test-classes.bak[0m

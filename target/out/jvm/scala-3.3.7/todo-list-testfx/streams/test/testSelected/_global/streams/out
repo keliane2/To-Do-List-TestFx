@@ -5,26 +5,26 @@
 [0m[[0m[0mdebug[0m] [0m[0m  Running TaskDef(it.unibo.todolist.TodoListGUITest, sbt.internal.worker1.ForkTestMain$AnnotatedFingerscan@5ebec15, true, [SuiteSelector])[0m
 [0m[[0m[0minfo[0m] [0m[0m[34mTest run started (JUnit Jupiter)[0m[0m
 [0m[[0m[0minfo[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldUpdateStatsAfterAddingTask()[0m started[0m
-[0m[[0m[31merror[0m] [0m[0mlug 10, 2026 8:25:24 PM com.sun.javafx.application.PlatformImpl startup[0m
-[0m[[0m[31merror[0m] [0m[0mAVVERTENZA: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @2fe98bdf'[0m
-[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldUpdateStatsAfterAddingTask()[0m finished, took 4.178s[0m
+[0m[[0m[31merror[0m] [0m[0mlug 10, 2026 9:14:10 PM com.sun.javafx.application.PlatformImpl startup[0m
+[0m[[0m[31merror[0m] [0m[0mAVVERTENZA: Unsupported JavaFX configuration: classes were loaded from 'unnamed module @3967aa21'[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldUpdateStatsAfterAddingTask()[0m finished, took 4.265s[0m
 [0m[[0m[0minfo[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldFilterCompletedTasks()[0m started[0m
-[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldFilterCompletedTasks()[0m finished, took 4.368s[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldFilterCompletedTasks()[0m finished, took 4.482s[0m
 [0m[[0m[0minfo[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldCompleteTaskUsingCheckbox()[0m started[0m
-[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldCompleteTaskUsingCheckbox()[0m finished, took 3.298s[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldCompleteTaskUsingCheckbox()[0m finished, took 3.37s[0m
 [0m[[0m[0minfo[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldAddTask()[0m started[0m
-[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldAddTask()[0m finished, took 2.621s[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldAddTask()[0m finished, took 2.635s[0m
 [0m[[0m[0minfo[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldDeleteTaskAfterConfirmation()[0m started[0m
-[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldDeleteTaskAfterConfirmation()[0m finished, took 4.164s[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldDeleteTaskAfterConfirmation()[0m finished, took 4.136s[0m
 [0m[[0m[0minfo[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldShowErrorWhenTaskIsEmpty()[0m started[0m
-[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldShowErrorWhenTaskIsEmpty()[0m finished, took 0.979s[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldShowErrorWhenTaskIsEmpty()[0m finished, took 0.858s[0m
 [0m[[0m[0minfo[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldFilterUncompletedTasks()[0m started[0m
-[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldFilterUncompletedTasks()[0m finished, took 4.325s[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldFilterUncompletedTasks()[0m finished, took 4.265s[0m
 [0m[[0m[0minfo[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldNotDeleteTaskWithoutConfirmation()[0m started[0m
-[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldNotDeleteTaskWithoutConfirmation()[0m finished, took 4.14s[0m
-[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m finished, took 28.151s[0m
-[0m[[0m[0mdebug[0m] [0m[0mTest junit-jupiter finished, took 28.198s[0m
-[0m[[0m[0minfo[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, [0m[34m8 total, [0m[34m28.267s[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m[36m#shouldNotDeleteTaskWithoutConfirmation()[0m finished, took 3.741s[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest it.unibo.todolist.[33mTodoListGUITest[0m finished, took 27.814s[0m
+[0m[[0m[0mdebug[0m] [0m[0mTest junit-jupiter finished, took 27.838s[0m
+[0m[[0m[0minfo[0m] [0m[0m[34mTest run finished: [0m[34m0 failed[0m[34m, [0m[34m0 ignored[0m[34m, [0m[34m8 total, [0m[34m27.897s[0m[0m
 [0m[[0m[0mdebug[0m] [0m[0m    Produced 0 nested tasks and 8 events.[0m
 [0m[[0m[0mdebug[0m] [0m[0mSummary for Jupiter not available.[0m
 [0m[[0m[0minfo[0m] [0m[0mPassed: Total 8, Failed 0, Errors 0, Passed 8[0m

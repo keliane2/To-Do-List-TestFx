@@ -38,7 +38,7 @@ jobs:
 
       - name: Run tests on Linux
         if: runner.os == 'Linux'
-        run: xvfb-run -a sbt clean test
+        run: xvfb-run -a sbt ";clean;test"
 
       - name: Build fat JAR
         run: sbt assembly
